@@ -58,7 +58,7 @@ async function render_target(): Promise<void> {
         const data: UserActiveWindow = await response.json();
         const unix: number = data.data.update_time;
         const date_format = timestampToDate(unix * 1000);
-        const online: boolean = Date.now() / 1000 - unix <= 60;
+        const online: boolean = Date.now() / 1000 - unix <= 30;
 
         target_user.textContent = `Target User: ${target_user_name}`;
         activeWindow_p.textContent = `Active Window: ${data.data.active_window}`;

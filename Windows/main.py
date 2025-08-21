@@ -17,11 +17,11 @@ SEND_GAP: Final[int] = CONFIG["Send"]["SEND_GAP"]
 def get_active_window_title() -> None:
     global active_window_last
 
-    active_window: Optional[str] = api.get_active_window_title()
+    active_window: Final[Optional[str]] = api.get_active_window_title()
 
     if not active_window:
-        active_window = "Unkonw"
         print(f"[info] [Active window] [{datetime.now()}] No active window found.")
+        return
     else:
         print(f"[info] [Active window] [{datetime.now()}] {active_window}")
     
