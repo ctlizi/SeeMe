@@ -1,5 +1,5 @@
 # SeeMe 视奸Web程序
-本项目是一个可以 “视奸” 用户的 Web 程序
+本项目是一个可以 “视奸” 用户的 Web 程序，灵感来源于：<a href="https://github.com/BlueYeeeee/SpyYourDesktop">SpuYourDesktop</a>。我要玩 <b>Arcaea</b>
 
 后端：基于 Python 的 Flask 框架
 
