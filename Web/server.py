@@ -1,6 +1,6 @@
 import flask
 from typing import Final, TypedDict, Optional, List
-from api import DataManager, EnhancedPasswordManager
+from api import DataManager, EnhancedPasswordManager, Data
 from time import time
 
 
@@ -40,7 +40,7 @@ users: List[User] = []
 
 # ========== Inits =========
 def init_users() -> None:
-    data: Final[dict] = DataManager.get_data()
+    data: Final[Data] = DataManager.get_data()
     for user in data.get("users", []):
         users.append({
             "user_id": user["id"],
