@@ -145,6 +145,7 @@ class ActiveWindowMonitor(QMainWindow):
         self.start_button: QPushButton = QPushButton("Start Monitoring")
         self.stop_button: QPushButton = QPushButton("Stop Monitoring")
         self.refresh_config_button: QPushButton = QPushButton("Refresh Config")
+        self.login_button: QPushButton = QPushButton("Login")
         self.exit_button: QPushButton = QPushButton("Exit")
         
         self.stop_button.setEnabled(False)
@@ -152,6 +153,7 @@ class ActiveWindowMonitor(QMainWindow):
         BUTTON_LAYOUT.addWidget(self.start_button)
         BUTTON_LAYOUT.addWidget(self.stop_button)
         BUTTON_LAYOUT.addWidget(self.refresh_config_button)
+        BUTTON_LAYOUT.addWidget(self.login_button)
         BUTTON_LAYOUT.addWidget(self.exit_button)
         
         # Log display
@@ -176,6 +178,7 @@ class ActiveWindowMonitor(QMainWindow):
         self.start_button.clicked.connect(self.start_monitoring)
         self.stop_button.clicked.connect(self.stop_monitoring)
         self.refresh_config_button.clicked.connect(self.refresh_config)
+        self.login_button.clicked.connect(self.login)
         self.exit_button.clicked.connect(self.close_application)
         
         # Add log entries
@@ -442,7 +445,6 @@ def main() -> None:
     APP.setQuitOnLastWindowClosed(False)
     
     font = QFont("Microsoft YaHei", 10)
-    
     APP.setFont(font)
     
     MONITOR: Final[ActiveWindowMonitor] = ActiveWindowMonitor()

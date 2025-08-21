@@ -64,10 +64,10 @@ async function render_target(): Promise<void> {
         activeWindow_p.textContent = `Active Window: ${data.data.active_window}`;
         update_p.textContent = `Update Time: ${date_format}`;
         if (online) {
-            status_p.textContent = "online";
+            status_p.textContent = "status: online";
             status_p.className = "online";
         } else {
-            status_p.textContent = "disconnect";
+            status_p.textContent = "status: disconnect";
             status_p.className = "disconnect";
         }
 
